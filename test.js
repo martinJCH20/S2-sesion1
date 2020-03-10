@@ -1,7 +1,7 @@
 // 1) Si hay Sandia en el mercado mostrar en pantalla la cantidad de sandias que hay disponibles.
-// 2) Teniendo 50 soles en la billetera quiero comprar 
-//    un pantalón que cuesta 10 retornar el monto del vuelto y mostrarlo en pantalla .
-//    Si el monto es mayo a 40 indicar que no tienes cambio (sencillo).
+// 2) Teniendo 95 soles en la billetera quiero comprar (20,10,5,10,50)
+//    un pantalón que cuesta 15 retornar el monto del vuelto y mostrarlo en pantalla .
+//    Si el monto es mayor o igual a 20 indicar que no tienes cambio (sencillo).
 //    Sino retornar el monto del cambio.    
 
 //1)
@@ -10,11 +10,26 @@ const existsSandia = (cantsandias >= 1) ? 'Hay '+ cantsandias + ' sandias': 'No 
 console.log(existsSandia);
 
 //2)
-let saldoBilletera = 50;
-let costoPantalon = 43;
+let saldoBilletera = 95;
+let costoPantalon = 15;
 
-if(costoPantalon>40){
-    console.log('no cuento con cambio');
-}else if (costoPantalon <=40){
-    console.log('vuelto: ', saldoBilletera - costoPantalon);
+// if(saldoBilletera - costoPantalon>=20){
+//     console.log('no cuento con cambio');
+// }else if (costoPantalon < 20){
+//     console.log('vuelto: ', saldoBilletera - costoPantalon);
+// }else{
+//     console.log('Valor inexistente');
+// }
+const monto = saldoBilletera - costoPantalon;
+switch(true){
+    case monto >= 20 :
+        console.log('no cuento con cambio');
+        break;
+    case monto < 20 :
+        console.log('vuelto: ', monto);
+        break;
+    default :
+        console.log('Valor inexistente');
 }
+
+console.log(monto);
